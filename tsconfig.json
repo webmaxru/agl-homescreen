@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "moduleResolution": "node",
+    "target": "es5",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "outDir": "./build",
+    "declaration": false,
+    "noEmitOnError": false,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "./src/**/*",
+    "./typings/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

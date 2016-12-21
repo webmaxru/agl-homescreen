@@ -1,0 +1,53 @@
+
+:host {
+  display: flex;
+  background: #29252d;
+  width: 30%;
+  color: #FFFFFF;
+}
+
+.weather-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  padding: 0.5em;
+}
+@media screen and (max-width: 350px) {
+  .weather-time {
+    padding: 0.25em;
+  }
+}
+.weather-time .datetime {
+  border-bottom: 1px solid #3c3940;
+  margin-bottom: 5px;
+}
+.weather-time .datetime span.day {
+  display: block;
+  font-size: 0.3em;
+  text-transform: uppercase;
+}
+.weather-time .datetime span.time {
+  font-size: 0.75em;
+}
+.weather-time .weather {
+  font-size: 0.45em;
+}
+
+ul {
+  width: 25%;
+  list-style: none;
+  margin: 0;
+  border-left: 1px solid #504d53;
+}
+ul li {
+  text-align: center;
+  height: 33%;
+}
+ul li a {
+  color: #525252;
+  font-size: 0.85em;
+}
+ul li a.on {
+  color: #FFFFFF;
+}

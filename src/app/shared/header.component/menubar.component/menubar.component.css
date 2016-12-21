@@ -1,0 +1,39 @@
+:host {
+  width: 75%;
+}
+
+ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  color: #eeeeee;
+  font-size: 0.5em;
+}
+ul li {
+  height: 100%;
+  width: 25%;
+  display: inline-block;
+}
+ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1e1d20;
+  border: 1px solid #1e1d20;
+  border-left-color: #363439;
+  border-right-color: #0f0e10;
+}
+ul li a.active {
+  background: linear-gradient(to top, #418e60, #1e1d20 45%);
+  border-bottom-color: #66ff99;
+}
+ul li a h3 {
+  font-size: 0.5em;
+  margin: 1em 0 0 0;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}

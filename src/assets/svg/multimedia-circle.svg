@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="50 25 220 220" style="fill: transparent;">
+  <style xmlns="http://www.w3.org/2000/svg" type="text/css">
+    .st96{fill:url(#SVGID_88_);}
+    .st97{fill:url(#SVGID_89_);}
+    .st98{fill:url(#SVGID_90_);}
+  </style>
+  <g xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="SVGID_88_" gradientUnits="userSpaceOnUse" x1="3.8712" y1="287.9501" x2="320.3091" y2="-15.402" gradientTransform="matrix(1 5.464556e-03 -5.464556e-03 1 -2.0192 -3.0212)">
+      <stop offset="0" style="stop-color:#59FF7F"/>
+      <stop offset="1" style="stop-color:#6BFBFF"/>
+    </linearGradient>
+    <path class="st96" d="M159.8,238.8c-0.2,0-0.4,0-0.6,0c-58-0.3-104.9-47.7-104.6-105.7C55,75.3,102.1,28.5,159.8,28.5       c0.2,0,0.4,0,0.6,0c58,0.3,104.9,47.7,104.6,105.7l0,0C264.7,192,217.5,238.8,159.8,238.8z M159.8,32.2       c-55.7,0-101.2,45.2-101.5,100.9c-0.3,55.9,45,101.7,100.9,102c0.2,0,0.4,0,0.6,0c55.7,0,101.2-45.2,101.5-100.9       c0.3-55.9-45-101.7-100.9-102C160.2,32.2,160,32.2,159.8,32.2z"/>
+    <linearGradient id="SVGID_89_" gradientUnits="userSpaceOnUse" x1="140.5445" y1="202.2363" x2="186.8444" y2="68.7049">
+      <stop offset="0" style="stop-color:#59FF7F"/>
+      <stop offset="1" style="stop-color:#6BFBFF"/>
+    </linearGradient>
+    <path class="st97" d="M114.5,190.9c-6.4,0-12-2.6-14.8-7.5c-2.9-4.9-5.4-14.5,9.6-23.2c4.8-2.8,17.1-3.9,20.8-4l0.1,3.6       c-4.6,0.1-15.5,1.4-19.1,3.5c-9.4,5.4-12.1,11.5-8.3,18.3c3.8,6.6,14.6,7.6,24,2.2c6.6-3.8,10.6-10.5,10.7-17.9l-0.1-0.7V95.4       l71.9-14.2l0.1,71.3c0,6.7-3.3,16.4-12.5,21.8c-11.1,6.4-24.1,4.8-28.9-3.5c-2.9-4.9-5.4-14.5,9.6-23.2       c4.4-2.5,14.4-3.8,18.8-3.9l0.1,3.6c-4.2,0.1-13.5,1.4-17.1,3.5c-6.4,3.7-13.1,9.9-8.3,18.3c3.8,6.6,14.6,7.6,24,2.2       c7.9-4.5,10.7-12.8,10.7-18.5l-0.1-0.8V85.6l-64.7,12.7v66.8l0.1,0.7c0,8.7-4.7,16.6-12.5,21.1       C123.9,189.6,119,190.9,114.5,190.9z"/>
+    <linearGradient id="SVGID_90_" gradientUnits="userSpaceOnUse" x1="145.3286" y1="203.8951" x2="191.6285" y2="70.3637">
+      <stop offset="0" style="stop-color:#59FF7F"/>
+      <stop offset="1" style="stop-color:#6BFBFF"/>
+    </linearGradient>
+    <polygon class="st98" points="155.6,123.3 154.8,119.8 195.5,110.2 196.3,113.7      "/>
+  </g>
+</svg>

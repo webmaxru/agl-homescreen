@@ -1,0 +1,22 @@
+<app-header></app-header>
+<main class="page-content">
+
+  <div class="welcome-bar" *ngIf="account">
+    Hello: {{account.firstname}}
+  </div>
+
+  <div class="row">
+
+    <div class="small-4 columns" *ngFor="let item of runnables; let i = index;">
+      <div class="app-launcher {{item.id}}" [ngClass]="{'is-pressed': item.isPressed, 'is-running': item.isRunning}" (click)="runApp($event, item)"
+           (mouseup)="item.isPressed=false"
+           (mousedown)="item.isPressed=true">
+        <!--(touchstart)="item.isPressed=true"-->
+        <!--(touchend)="item.isPressed=false"-->
+      </div>
+      <h5>{{item.name}}</h5>
+    </div>
+
+  </div>
+</main>
+<footer></footer>

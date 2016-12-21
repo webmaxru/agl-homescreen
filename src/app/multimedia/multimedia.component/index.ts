@@ -1,0 +1,1 @@
+export {MultimediaComponent} from "./multimedia.component";

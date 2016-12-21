@@ -1,0 +1,21 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1em 0.25em;
+  background: url("./assets/img/background.png") no-repeat;
+  background-size: 100%;
+}
+
+.login form {
+  width: 100%;
+}
+
+.login form label {
+  color: #FFFFFF;
+}
+
+.login form .button {
+  width: 100%;
+}

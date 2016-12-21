@@ -1,0 +1,146 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main.page-content {
+  background: url("./assets/img/content-background-car-vertical.png") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+main.page-content .mph {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+main.page-content .mph h1 {
+  font-size: 4em;
+  line-height: 1;
+  margin-bottom: 0;
+}
+@media screen and (max-height: 650px) {
+  main.page-content .mph h1 {
+    font-size: 3em;
+  }
+}
+main.page-content .mph h1 .unit {
+  font-size: 0.35em;
+}
+main.page-content .mph .mileage {
+  letter-spacing: 0;
+  font-size: 0.75em;
+  display: inline-block;
+  width: 100%;
+  text-align: end;
+  color: #6f7478;
+}
+main.page-content svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+main.page-content .tires {
+  height: 53%;
+  width: 100%;
+  position: relative;
+}
+main.page-content .tires .title {
+  overflow: hidden;
+  height: 9px;
+}
+main.page-content .tires .value {
+  color: #66FF99;
+}
+main.page-content .tires .tire {
+  position: absolute;
+  font-size: 0.3em;
+}
+main.page-content .tires .tire .value {
+  display: block;
+  margin-top: 2px;
+}
+main.page-content .tires .tire.left-front {
+  top: 8%;
+  right: 82%;
+  text-align: end;
+}
+main.page-content .tires .tire.left-rear {
+  bottom: 27%;
+  right: 82%;
+  text-align: end;
+}
+main.page-content .tires .tire.right-front {
+  top: 8%;
+  left: 81%;
+  text-align: start;
+}
+main.page-content .tires .tire.right-rear {
+  bottom: 27%;
+  left: 81%;
+  text-align: start;
+}
+
+.st16 {
+  fill: url(#SVGID_7_);
+}
+
+.st17 {
+  fill: url(#SVGID_8_);
+}
+
+.st18 {
+  fill: url(#SVGID_9_);
+}
+
+.st19 {
+  font-size: 17px;
+}
+
+.st21 {
+  fill: #66FF99;
+}
+
+.st22 {
+  fill: url(#SVGID_10_);
+}
+
+.st23 {
+  fill: url(#SVGID_11_);
+}
+
+.st24 {
+  fill: url(#SVGID_12_);
+}
+
+.st25 {
+  fill: url(#SVGID_13_);
+}
+
+.st26 {
+  fill: url(#SVGID_14_);
+}
+
+.st27 {
+  fill: url(#SVGID_15_);
+}
+
+.st28 {
+  fill: url(#SVGID_16_);
+}
+
+.st29 {
+  fill: url(#SVGID_17_);
+}
+
+.st30 {
+  fill: url(#SVGID_18_);
+}
+
+.st31 {
+  fill: none;
+  stroke: #66FF99;
+  stroke-miterlimit: 10;
+}
