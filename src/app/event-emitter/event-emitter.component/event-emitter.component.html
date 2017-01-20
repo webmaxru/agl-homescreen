@@ -1,0 +1,20 @@
+<app-header></app-header>
+<main class="page-content">
+    <div>
+        <label>
+            <input [(ngModel)]="name" type="text" class="form-control" placeholder="Name">
+        </label>
+        <label>
+            <select [(ngModel)]="language">
+                <option selected="selected" disabled value="">Select Language</option>
+                <option value="ENG">ENG</option>
+                <option value="FRA">FRA</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <button (click)="triggerLogin()">Emit login</button>
+        <button (click)="triggerLogout()">Emit logout</button>
+    </div>
+</main>
+<app-footer></app-footer>

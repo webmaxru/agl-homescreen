@@ -1,0 +1,1 @@
+export {SettingsBluetoothComponent} from "./settings-bluetooth.component";

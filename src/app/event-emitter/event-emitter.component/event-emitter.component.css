@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+:host input{
+    font-size: small;
+    height: 50%;
+}
+:host button{
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    color: #4fc38f;
+}

@@ -10,7 +10,7 @@ module.exports = function (app) {
 
   app.post('/login', function (req, res) {
     // you might like to do a database look-up or something more scalable here
-    if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
+    if (req.body.username /*&& req.body.username === 'user'*/ && req.body.password /*&& req.body.password === 'pass'*/) {
       req.session.authenticated = true;
       res.json({token: conf.token});
     } else {

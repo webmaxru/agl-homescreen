@@ -1,53 +1,48 @@
 
 :host {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
   background: #29252d;
-  width: 30%;
+  width: 100%;
+  height: 25%;
   color: #FFFFFF;
 }
 
 .weather-time {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 75%;
-  padding: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.5em;
 }
 @media screen and (max-width: 350px) {
   .weather-time {
     padding: 0.25em;
   }
 }
-.weather-time .datetime {
-  border-bottom: 1px solid #3c3940;
-  margin-bottom: 5px;
+/*.weather-time .datetime span.day {*/
+  /*font-size: 0.3em;*/
+  /*text-transform: uppercase;*/
+/*}*/
+/*.weather-time .datetime span.time {*/
+  /*font-size: 0.75em;*/
+/*}*/
+.weather-time span{
+  padding: 3px;
 }
-.weather-time .datetime span.day {
-  display: block;
-  font-size: 0.3em;
-  text-transform: uppercase;
+.connections{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.weather-time .datetime span.time {
-  font-size: 0.75em;
-}
-.weather-time .weather {
-  font-size: 0.45em;
-}
-
-ul {
-  width: 25%;
-  list-style: none;
-  margin: 0;
-  border-left: 1px solid #504d53;
-}
-ul li {
-  text-align: center;
-  height: 33%;
-}
-ul li a {
+.connections a {
   color: #525252;
-  font-size: 0.85em;
+  font-size: 0.65em;
+  padding: 3px;
 }
-ul li a.on {
+.connections a.on {
   color: #FFFFFF;
 }

@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-  <menubar></menubar>
-  <infobar></infobar>`,
+  <infobar></infobar>
+  <menubar></menubar>`,
   styles: [`
     :host {
-      display: inline-flex;
-      height: 90px;
+      /*display: flex;*/
+      height: 80px;
     }`]
 })
 export class HeaderComponent implements OnInit {

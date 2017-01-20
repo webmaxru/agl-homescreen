@@ -3,9 +3,9 @@
   "description": "AFB front end",
   "main": "",
   "authors": [
-    "Agemos Software <contact@agemos.fr>"
+    "Gwendal Le Derrien <g.lederrien@agemos.fr>"
   ],
-  "license": "Apache2",
+  "license": "Apache 2",
   "keywords": [
     "angular"
   ],

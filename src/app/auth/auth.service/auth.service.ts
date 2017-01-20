@@ -8,15 +8,15 @@ import {
   RequestOptions, Response
 } from '@angular/http';
 
-import {AuthData} from './auth-data';
 import {environment} from '../../../environments/environment';
-// import { HttpClient } from '../../common/httpclient';
 
 @Injectable()
 export class AuthService {
 
   private url: string = environment.service.api;
   public token: string;
+  public username: string;
+  public language: string;
 
   constructor(private http: Http) {
     // set token if saved in local storage

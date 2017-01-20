@@ -1,21 +1,34 @@
 import {Routes, RouterModule} from '@angular/router';
-import {LoginComponent} from "./login/login.component";
-import {HomeComponent} from './home/home.component/index';
+import {AppLauncherComponent} from './app-launcher/app-launcher.component/index';
 import {MultimediaComponent} from './multimedia/multimedia.component/index';
 import {HvacComponent} from "./hvac/hvac.component/hvac.component";
 import {NavigationComponent} from "./navigation/navigation.component/navigation.component";
-import {AuthGuard} from "./auth/auth.service/auth.guard";
+import {ConnectivityComponent} from "./connectivity/connectivity.component/connectivity.component";
+import {HomeComponent} from "./home/home.component/home.component";
+import {SettingsHomeComponent} from "./settings/settings-home/settings-home.component";
+import {SettingsBluetoothComponent} from "./settings/settings-bluetooth/settings-bluetooth.component";
+import {SettingsWifiComponent} from "./settings/settings-wifi/settings-wifi.component";
+import {SettingsDatetimeComponent} from "./settings/settings-datetime/settings-datetime.component";
+import {EventEmitterComponent} from "./event-emitter/event-emitter.component/event-emitter.component";
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'logout', component: LoginComponent},
-  {path: 'multimedia', component: MultimediaComponent, canActivate: [AuthGuard]},
-  {path: 'hvac', component: HvacComponent, canActivate: [AuthGuard]},
-  {path: 'navigation', component: NavigationComponent, canActivate: [AuthGuard]},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'car-login', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'car-logout', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: '**', component: HomeComponent, canActivate: [AuthGuard]}
+  {path: 'home', component: HomeComponent},
+  {path: 'app-launcher', component: AppLauncherComponent},
+  {path: 'multimedia', component: MultimediaComponent},
+  {path: 'hvac', component: HvacComponent},
+  {path: 'navigation', component: NavigationComponent},
+  {path: 'connectivity', component: ConnectivityComponent},
+  {
+    path: 'settings',
+    children: [
+      {path: '', component: SettingsHomeComponent},
+      {path: 'bluetooth', component: SettingsBluetoothComponent},
+      {path: 'wifi', component: SettingsWifiComponent},
+      {path: 'datetime', component: SettingsDatetimeComponent}
+    ]
+  },
+  {path: 'event-emitter', component: EventEmitterComponent},
+  {path: '**', component: HomeComponent}
 
   // {
   //   path: 'heroes',

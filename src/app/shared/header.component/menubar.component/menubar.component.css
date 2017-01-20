@@ -1,10 +1,10 @@
 :host {
-  width: 75%;
+  width: 100%;
 }
 
 ul {
   display: flex;
-  height: 100%;
+  height: 75%;
   margin: 0;
   list-style: none;
   color: #eeeeee;
@@ -12,8 +12,11 @@ ul {
 }
 ul li {
   height: 100%;
-  width: 25%;
+  width: 13.7%;
   display: inline-block;
+}
+ul li:first-child{
+  width: 17.8%;
 }
 ul li a {
   width: 100%;
@@ -32,8 +35,13 @@ ul li a.active {
   border-bottom-color: #66ff99;
 }
 ul li a h3 {
+  text-align: center;
   font-size: 0.5em;
   margin: 1em 0 0 0;
   text-transform: uppercase;
   color: #FFFFFF;
+  letter-spacing: 0.4px;
+}
+.launcher-icon{
+  height: 50%;
 }

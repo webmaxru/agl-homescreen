@@ -57,13 +57,25 @@ gulp.task('copy:assets', function () {
       .pipe(gulp.dest(conf.paths.dist + '/assets'));
 });
 
+gulp.task('copy:node_modules', function () {
+  return gulp.src(conf.paths.node_modules, {base: './node_modules/'})
+      .pipe(gulp.dest(conf.paths.dist + '/node_modules'));
+});
+
+gulp.task('copy:bower_components', function () {
+  return gulp.src(conf.paths.bower_components, {base: './bower_components'})
+      .pipe(gulp.dest(conf.paths.dist + '/bower_components'));
+});
+
 gulp.task('watch', function () {
   gulp.watch(conf.paths.index, ['index']);
   gulp.watch(conf.paths.ts, ['compile']);
   gulp.watch(conf.paths.cmptRsrc, ['compile']);
-  gulp.watch(conf.paths.staticFiles, ['static']);
+  gulp.watch(conf.paths.staticFiles, ['index']);
   gulp.watch(conf.paths.assets, ['copy:assets']);
 });
+
+gulp.task('dependencies', ['copy:node_modules', 'copy:bower_components']);
 
 gulp.task('build', ['index', 'compile', 'static', 'copy:assets']);
 
@@ -73,13 +85,10 @@ gulp.task('serve', function () {
     browser: 'default',
     server: {
       baseDir: "./build",
-      routes: {
-        '/node_modules': 'node_modules',
-        '/bower_components': 'bower_components'
-      }
+      routes: {}
     },
     port: 8000
   });
 });
 
-gulp.task('default', gulpSequence('clean', 'build', 'serve', 'watch'));
+gulp.task('default', gulpSequence('clean','dependencies', 'build', 'serve', 'watch'));

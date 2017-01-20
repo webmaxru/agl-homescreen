@@ -11,6 +11,15 @@ module.exports = {
       './src/global.css',
       './src/systemjs.config.js'
     ],
+    bower_components: [
+      './bower_components/foundation-sites/dist/**/*',
+      './bower_components/components-font-awesome/{fonts,css}/**/*'
+    ],
+    node_modules: [
+      './node_modules/@angular/**/*',
+      './node_modules/rxjs/**/*',
+      './node_modules/ng2-translate/bundles/**/*'
+    ],
 
     dist: './build'
   },

@@ -1,0 +1,42 @@
+{
+  "MENUBAR": {
+    "HOME": "Accueil",
+    "APP-LAUNCHER": "Lanceur d'applications",
+    "MULTIMEDIA": "Multimédia",
+    "HVAC": "Clim",
+    "CONNECTIVITY": "Connectivité",
+    "NAVIGATION": "Navigation"
+  },
+  "HOME": {
+    "TITLE": "Bienvenue"
+  },
+  "HVAC": {
+    "LEFT-FRONT": "Pneu Avant Gauche",
+    "LEFT-REAR": "Pneu Arrière Gauche",
+    "RIGHT-FRONT": "Pneu Avant Droit",
+    "RIGHT-REAR": "Pneu Arrière droit"
+  },
+  "SETTINGS": {
+    "HOME": {
+      "TITLE": "Paramètres"
+    }
+  },
+  "APPS": {
+    "HVAC": "Clim",
+    "NAVIGATION": "Navigation",
+    "PHONE": "Téléphone",
+    "RADIO": "Radio",
+    "MULTIMEDIA": "Multimédia",
+    "CONNECTIVITY": "Connectivité",
+    "DASHBOARD": "Tableau de bord",
+    "SETTINGS": "Paramètres",
+    "POINT" : "Point d'intérêt"
+  },
+  "UNDER-CONSTRUCTION": "est en construction",
+  "POPUP":{
+    "CONFIRM": "Confirmer le changement de compte",
+    "CANCEL": "Annuler",
+    "TIME-LEFT": "Temps restant",
+    "SECONDS": "secondes"
+  }
+}

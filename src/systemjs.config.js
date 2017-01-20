@@ -4,15 +4,15 @@
   // map tells the System loader where to look for things
   const map = {
     'app':                        '/', // 'dist',
-    '@angular':                   'node_modules/@angular',
-    'rxjs':                       'node_modules/rxjs',
-    'socket.io-client':           'node_modules/socket.io-client/dist/socket.io.js'
+    '@angular':                   './node_modules/@angular',
+    'rxjs':                       './node_modules/rxjs',
+    'ng2-translate':              './node_modules/ng2-translate/bundles',
   };
   // packages tells the System loader how to load when no filename and/or no extension
   const packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { main: 'bundles/Rx.js', defaultExtension: 'js' },
-    "socket.io-client":           { "defaultExtension": "js" }
+    'ng2-translate':              { main: 'index.js', defaultExtension: 'js' }
   };
   const ngPackageNames = [
     'common',

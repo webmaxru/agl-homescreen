@@ -1,10 +1,10 @@
-
-<div class="weather-time">
-  <div class="datetime"><span class="day">{{now | date: 'EEEE'}}</span><span class="time">{{now | date: 'h:mm'}}</span></div>
-  <div class="weather"><i class="icon-cloud-raindrops"></i>64 &#176;F</div>
+<!--<div class="datetime"><span class="day">{{now | date: 'EEEE'}}</span></div>-->
+<div class="connections">
+    <a (click)="toogleConnection($event, connections[2])" [class.on]="connections[2].isOn"><i class="fa fa-signal"></i></a>
+    <a (click)="toogleConnection($event, connections[0])" [class.on]="connections[0].isOn"><i class="fa fa-wifi"></i></a>
+    <a (click)="toogleConnection($event, connections[1])" [class.on]="connections[1].isOn"><i class="fa fa-bluetooth-b"></i></a>
 </div>
-<ul>
-  <li><a (click)="toogleConnection($event, connections[0])" [class.on]="connections[0].isOn"><i class="fa fa-wifi"></i></a></li>
-  <li><a (click)="toogleConnection($event, connections[1])" [class.on]="connections[1].isOn"><i class="fa fa-bluetooth-b"></i></a></li>
-  <li><a (click)="toogleConnection($event, connections[2])" [class.on]="connections[2].isOn"><i class="fa fa-signal"></i></a></li>
-</ul>
+<div class="weather-time">
+    <span class="time">{{now | date: 'h:mm'}}</span>
+    <div class="weather"><i class="icon-cloud-raindrops"></i>64 &#176;F</div>
+</div>

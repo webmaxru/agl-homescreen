@@ -1,0 +1,40 @@
+<app-header></app-header>
+<main class="page-content">
+    <div class="settings-title">
+        {{"SETTINGS.HOME.TITLE" | translate}}
+    </div>
+    <div class="setting-section">
+        <a routerLink="/settings/datetime">
+            <span>
+                <i class="fa fa-clock-o"></i>
+                Datetime
+            </span>
+        </a>
+    </div>
+    <div class="setting-section">
+        <a routerLink="/settings/wifi">
+            <span>
+                <i class="fa fa-wifi"></i>
+                    Wi-fi
+            </span>
+        </a>
+        <div class="switch">
+            <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label for="cmn-toggle-2"></label>
+        </div>
+    </div>
+
+    <div class="setting-section">
+        <a routerLink="/settings/bluetooth">
+            <span>
+                <i class="fa fa-bluetooth-b"></i>
+                    Bluetooth
+            </span>
+        </a>
+        <div class="switch">
+            <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label for="cmn-toggle-3"></label>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,42 @@
+{
+  "MENUBAR": {
+    "HOME": "Home",
+    "APP-LAUNCHER": "App launcher",
+    "MULTIMEDIA": "Multimedia",
+    "HVAC": "HVAC",
+    "CONNECTIVITY": "Connectivity",
+    "NAVIGATION": "Navigation"
+  },
+  "HOME": {
+    "TITLE": "Welcome"
+  },
+  "HVAC": {
+    "LEFT-FRONT": "Left Front Tire",
+    "LEFT-REAR": "Left Rear Tire",
+    "RIGHT-FRONT": "Right Front Tire",
+    "RIGHT-REAR": "Right Rear Tire"
+  },
+  "SETTINGS": {
+    "HOME" : {
+      "TITLE": "Settings"
+    }
+  },
+  "APPS": {
+    "HVAC": "HVAC",
+    "NAVIGATION": "Navigation",
+    "PHONE": "Phone",
+    "RADIO": "Radio",
+    "MULTIMEDIA": "Multimedia",
+    "CONNECTIVITY": "Connectivity",
+    "DASHBOARD": "Dashboard",
+    "SETTINGS": "Settings",
+    "POINT" : "Point of interest"
+  },
+  "UNDER-CONSTRUCTION": "is under construction",
+  "POPUP":{
+    "CONFIRM": "Confirm switching user",
+    "CANCEL": "Cancel",
+    "TIME-LEFT": "Time left",
+    "SECONDS": "seconds"
+  }
+}

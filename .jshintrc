@@ -1,7 +1,7 @@
 {
   "esversion": 6,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "globalstrict": true,
-  "predef": [ "console", "require", "module", "setInterval", "__dirname"]
+  "predef": [ "console", "require", "module", "setInterval", "clearInterval", "__dirname"]
 }

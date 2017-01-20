@@ -1,0 +1,1 @@
+export {SettingsWifiComponent} from "./settings-wifi.component";

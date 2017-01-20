@@ -200,25 +200,25 @@
     </g>
   </svg>
   <div class="mph">
-    <h1>{{speed.value | number: '3.0-0'}}<span class="unit">{{speed.unit}}</span></h1><span class="mileage">{{mileage.value}} {{mileage.unit}}</span>
+    <h1>{{speed | number: '3.0-0'}}<span class="unit">MPH</span></h1><span class="mileage">{{mileage}} MI</span>
   </div>
   <div class="tires">
     <div class="tire left-front">
-      <div class="title">Left Front Tire</div>
+      <div class="title">{{'HVAC.LEFT-FRONT' | translate}}</div>
       <span class="value">{{leftFront}} PSI</span>
     </div>
     <div class="tire left-rear">
-      <div class="title">Left Rear Tire</div>
+      <div class="title">{{'HVAC.LEFT-REAR' | translate}}</div>
       <span class="value">{{leftRear}} PSI</span>
     </div>
     <div class="tire right-front">
-      <div class="title">Right Front Tire</div>
+      <div class="title">{{'HVAC.RIGHT-FRONT' | translate}}</div>
       <span class="value">{{rightFront}} PSI</span>
     </div>
     <div class="tire right-rear">
-      <div class="title">Right Rear Tire</div>
+      <div class="title">{{'HVAC.RIGHT-REAR' | translate}}</div>
       <span class="value">{{rightRear}} PSI</span>
     </div>
   </div>
 </main>
-<footer></footer>
+<app-footer></app-footer>

@@ -1,0 +1,1 @@
+export {SettingsHomeComponent} from "./settings-home.component";

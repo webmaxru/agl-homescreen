@@ -1,88 +1,72 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
-import {Router, NavigationEnd} from "@angular/router";
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {WebSocketHandler} from "../../shared/WebSocketHandler";
 import {environment} from "../../../environments/environment";
-import * as io from "socket.io-client";
+import {AccountService} from "../../account/account.service";
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.component.html',
-    styleUrls: ['home.component.css']
+  selector: 'home',
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy {
-    private connection;
-    private url: string = environment.service.api;
-    private socket;
-    private runnables;
-    private account;
+export class HomeComponent implements OnInit, OnDestroy, WebSocketHandler {
+  private url: string = environment.service.api;
+  private socket;
+  private account;
+  private tmpAccount;
+  private hidePopUp: boolean = true;
 
-    constructor(private router: Router) {
-        this.socket = io.connect(this.url);
+  constructor(private accountService: AccountService) {
+  }
+
+  ngOnInit() {
+    this.socket = new WebSocket(this.url);
+    this.socket.onopen = this.onWSOpen.bind(this);
+    this.socket.onclose = this.onWSClose.bind(this);
+    this.socket.onmessage = this.onWSMessageReceive.bind(this);
+
+    this.account = this.accountService.getAccount();
+  }
+
+  ngOnDestroy(): void {
+    this.socket.close();
+  }
+
+  onWSOpen(): void {
+    console.log("Home websocket is open");
+  }
+
+  onWSClose(): void {
+    console.log("Home websocket is closed");
+  }
+
+  onWSMessageReceive(res): void {
+    let response = JSON.parse(res.data);
+
+    switch (response.type) {
+      case "logged-in":
+        // @todo agl-identity/login
+        if (this.account) {
+          this.tmpAccount = response.data.account;
+          this.hidePopUp = false;
+        } else {
+          this.account = this.accountService.setAccount(response.data.account);
+        }
+        break;
+      case "logged-out":
+        // @todo agl-identity/logout
+        this.account = this.accountService.setAccount(null);
+        break;
+      default:
+        throw new Error("Unknown response type");
     }
+  }
 
-    //@todo Add listeners to listen api-methods and implement your logic here
-    ngOnInit() {
-        this.router.events.subscribe((event: any) => {
-            if(event instanceof NavigationEnd) {
-                switch (event.url) {
-                    case '/car-login':
-                        this.triggerLogin();
-                        break;
-                    case '/car-logout':
-                        this.triggerLogout();
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
+  confirmLogin() {
+    this.account = this.accountService.setAccount(this.tmpAccount);
+    this.hidePopUp = true;
+  }
 
-        this.socket.emit("send-runnables");
-
-        this.connection = this.socket.on("new-runnables", res => {
-            // @todo  afm-main/runnables
-            let apps = res.data.apps;
-            this.runnables = apps;
-        });
-
-        this.connection = this.socket.on("app-started", res => {
-            // @todo afm-main/start
-            let app = res.data.app;
-            this.runnables.filter(r => r.id == app.id)[0].isRunning = app.isRunning;
-        });
-
-
-        this.connection = this.socket.on("app-once", res => {
-            // @todo afm-main/once
-            alert('App is already running');
-        });
-
-        this.connection = this.socket.on("logged-in", res => {
-            // @todo agl-identity/login
-            let account = res.data.account;
-            this.account = account;
-        });
-
-        this.connection = this.socket.on("logout-out", res => {
-            // @todo agl-identity/login
-            this.account = null;
-        });
-    }
-
-    ngOnDestroy() {
-        this.socket.disconnect();
-    }
-
-    runApp(event, app) {
-        this.socket.emit("launch-app", {id: app.id});
-    }
-
-    private triggerLogin() {
-        this.socket.emit("login", {
-            id: 'someAccountId'
-        });
-    }
-
-    private triggerLogout() {
-        this.socket.emit("logout");
-    }
+  cancelLogin() {
+    this.hidePopUp = true;
+  }
 }

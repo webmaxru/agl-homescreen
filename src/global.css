@@ -53,7 +53,8 @@
 
 html, body {
   height: 100%;
-  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 body, h1, h2, h3, h4, h5, h6{
@@ -123,6 +124,16 @@ main.page-content {
 }
 .app-launcher.point {
   background-image: url('./assets/svg/point-circle.svg');
+}
+
+.btn-primary {
+  background-color: black;
+  color: #62fdb9;
+  padding: 10px;
+  border: solid 1px;
+  border-radius: 5px;
+  width: 40%;
+  outline: none;
 }
 
 footer {
