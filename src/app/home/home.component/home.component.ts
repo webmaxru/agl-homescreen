@@ -1,72 +1,46 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {WebSocketHandler} from "../../shared/WebSocketHandler";
-import {environment} from "../../../environments/environment";
-import {AccountService} from "../../account/account.service";
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import {AglIdentityService} from "../../shared/aglIdentity.service";
 
 @Component({
   selector: 'home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy, WebSocketHandler {
-  private url: string = environment.service.api;
-  private socket;
+export class HomeComponent implements OnInit, OnDestroy {
   private account;
   private tmpAccount;
   private hidePopUp: boolean = true;
 
-  constructor(private accountService: AccountService) {
+  constructor(private aglIdentityService: AglIdentityService) {
   }
 
   ngOnInit() {
-    this.socket = new WebSocket(this.url);
-    this.socket.onopen = this.onWSOpen.bind(this);
-    this.socket.onclose = this.onWSClose.bind(this);
-    this.socket.onmessage = this.onWSMessageReceive.bind(this);
-
-    this.account = this.accountService.getAccount();
+    this.aglIdentityService.loginResponse.subscribe((response: any) => {
+      let account = response.account;
+      if (this.account) {
+        this.tmpAccount = account;
+        this.hidePopUp = false;
+      } else {
+        this.account = account;
+      }
+    });
+    this.aglIdentityService.logoutResponse.subscribe(response=> {
+      this.account = null;
+    });
   }
 
   ngOnDestroy(): void {
-    this.socket.close();
-  }
-
-  onWSOpen(): void {
-    console.log("Home websocket is open");
-  }
-
-  onWSClose(): void {
-    console.log("Home websocket is closed");
-  }
-
-  onWSMessageReceive(res): void {
-    let response = JSON.parse(res.data);
-
-    switch (response.type) {
-      case "logged-in":
-        // @todo agl-identity/login
-        if (this.account) {
-          this.tmpAccount = response.data.account;
-          this.hidePopUp = false;
-        } else {
-          this.account = this.accountService.setAccount(response.data.account);
-        }
-        break;
-      case "logged-out":
-        // @todo agl-identity/logout
-        this.account = this.accountService.setAccount(null);
-        break;
-      default:
-        throw new Error("Unknown response type");
-    }
+    // this.aglIdentityService.loginResponse.unsubscribe();
+    // this.aglIdentityService.logoutResponse.unsubscribe();
   }
 
   confirmLogin() {
-    this.account = this.accountService.setAccount(this.tmpAccount);
+    this.account = this.tmpAccount;
     this.hidePopUp = true;
   }
 
   cancelLogin() {
     this.hidePopUp = true;
   }
+
 }

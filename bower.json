@@ -3,9 +3,9 @@
   "description": "AFB front end",
   "main": "",
   "authors": [
-    "Gwendal Le Derrien <g.lederrien@agemos.fr>"
+    "Berdimyradov <kesha_yashok@mail.ru>"
   ],
-  "license": "Apache 2",
+  "license": "MIT",
   "keywords": [
     "angular"
   ],

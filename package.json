@@ -11,7 +11,8 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "server": "nodemon server\\server.js"
   },
   "dependencies": {
     "@angular/common": "2.2.4",

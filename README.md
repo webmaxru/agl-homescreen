@@ -4,11 +4,11 @@
 
 ### Development mode:
 
-+ run npm install
-+ run bower update
++ run: npm install
++ run: bower update
 + install gulp-cli globally if not installed (with command: npm install -g gulp-cli)
-+ run gulp
-+ run node_modules\\.bin\nodemon server\server.js (to start up dev-server)
++ run: gulp
++ run: npm run server (to start up dev-server)
 + open localhost:8000 in browser
 
 P.S. http://localhost:8000/#/event-emitter  - the address for emitting login/logout events

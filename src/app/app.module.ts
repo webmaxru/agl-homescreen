@@ -22,7 +22,9 @@ import {SettingsDatetimeComponent} from "./settings/settings-datetime/settings-d
 import {PopUpComponent} from "./shared/pop-up.component/pop-up.component";
 import {EventEmitterComponent} from "./event-emitter/event-emitter.component/event-emitter.component";
 import {UserBarComponent} from "./shared/user-bar.component/user-bar.component";
-import {AccountService} from "./account/account.service";
+import {WebSocketService} from "./shared/websocket.service";
+import {AglIdentityService} from "./shared/aglIdentity.service";
+import {AfmMainService} from "./shared/afmMain.service";
 
 @NgModule({
   imports: [
@@ -61,7 +63,9 @@ import {AccountService} from "./account/account.service";
     appRouteProviders,
     AuthGuard,
     AuthService,
-    AccountService
+    WebSocketService,
+    AglIdentityService,
+    AfmMainService
   ],
   bootstrap: [AppComponent]
 })

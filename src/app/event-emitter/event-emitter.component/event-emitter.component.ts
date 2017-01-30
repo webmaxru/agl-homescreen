@@ -1,5 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {environment} from "../../../environments/environment";
+import {AglIdentityService} from "../../shared/aglIdentity.service";
 
 @Component({
   selector: 'event-emitter',
@@ -7,38 +8,27 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['event-emitter.component.css']
 })
 export class EventEmitterComponent implements OnInit, OnDestroy {
-  private url: string = environment.service.api;
-  private socket;
+  // private url: string = environment.service.api;
+  // private socket;
   private name: string;
   private language: string = "";
 
-  constructor() {
+  constructor(private aglIdentityService: AglIdentityService) {
   }
 
   ngOnInit() {
-    this.socket = new WebSocket(this.url);
+    // this.socket = new WebSocket(this.url);
   }
 
   ngOnDestroy(): void {
-    this.socket.close();
+    // this.socket.close();
   }
 
   triggerLogin() {
-    this.socket.send(JSON.stringify({
-      api: "agl-identity/login",
-      data: {
-        username: this.name,
-        language: this.language
-      }
-    }));
+    this.aglIdentityService.login(this.name, this.language);
   }
 
   triggerLogout() {
-    this.socket.send(JSON.stringify({
-      api: "agl-identity/logout",
-      data: {
-        accountId: 'someAccountId'
-      }
-    }));
+    this.aglIdentityService.logout();
   }
 }

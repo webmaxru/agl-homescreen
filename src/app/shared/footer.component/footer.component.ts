@@ -1,19 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {AccountService} from "../../account/account.service";
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {AglIdentityService} from "../aglIdentity.service";
 
 @Component({
   selector: 'app-footer',
   templateUrl: 'footer.component.html',
   styleUrls: ['footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy{
   private account;
 
-  constructor(private accountService: AccountService) {
-    accountService.onAccountChanged.subscribe(account => this.account = account);
+  constructor(private aglIdentityService: AglIdentityService) {
   }
 
   ngOnInit() {
-    this.account = this.accountService.getAccount();
+    this.aglIdentityService.loginResponse.subscribe((response: any) => {
+      this.account = response.account;
+    });
+  }
+
+  ngOnDestroy(): void {
+    // this.aglIdentityService.loginResponse.unsubscribe();
+    // this.aglIdentityService.logoutResponse.unsubscribe();
   }
 }

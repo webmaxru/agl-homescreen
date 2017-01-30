@@ -12,5 +12,7 @@ export const environment: any = {
 
   service: {
     api: 'ws://localhost:5000',
+    aglIdentity: 'ws://localhost:5000',
+    afmMain: 'ws://localhost:5000'
   }
 };
