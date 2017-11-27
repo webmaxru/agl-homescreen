@@ -35,6 +35,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { LoginModule } from './login/login.module';
+import { SpotifyAppComponent } from './spotify-app/spotify-app.component';
+
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -53,7 +57,8 @@ export function createTranslateLoader(http: HttpClient) {
           useFactory: (createTranslateLoader),
           deps: [HttpClient]
       }
-  })
+  }),
+  LoginModule
   ],
   declarations: [
     AppComponent,
@@ -76,7 +81,8 @@ export function createTranslateLoader(http: HttpClient) {
     EventEmitterComponent,
     UserBarComponent,
     RemoveAppsPrefixPipe,
-    SafePipe
+    SafePipe,
+    SpotifyAppComponent
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

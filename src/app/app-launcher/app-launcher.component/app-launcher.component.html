@@ -4,8 +4,8 @@
     <user-bar *ngIf="account" [(language)]="account.language" [(username)]="account.username"></user-bar>
 
     <div class="row">
-        <div class="small-4 columns" *ngFor="let item of apps; let i = index;">
-            <div class="app-launcher" [ngStyle]="{'background-image': 'url(' + item.iconUrl + ')'}" [ngClass]="{'is-pressed': item.extend.isPressed, 'is-running': item.isRunning}" (click)="runApp($event, item)"
+        <div class="small-2 columns" *ngFor="let item of apps; let i = index;">
+            <div class="app-launcher" [ngStyle]="{'background-image': 'url(' + item.iconUrl + ')'}" [ngClass]="{'is-pressed': item.extend.isPressed, 'is-running': item.isRunning}" routerLink="/spotify"
                 (mouseup)="item.extend.isPressed=false" (mousedown)="item.extend.isPressed=true">
                 <!--(touchstart)="item.extend.isPressed=true"-->
                 <!--(touchend)="item.extend.isPressed=false"-->

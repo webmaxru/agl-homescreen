@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['connectivity.component.css']
 })
 export class ConnectivityComponent implements OnInit {
+
+    url = 'https://www.automotivelinux.org/'
+    
     constructor() {}
     ngOnInit() {}
 }

@@ -12,15 +12,19 @@
     "AGL"
   ],
   "scripts": {
-    "sync": "rsync -avrzh --rsh=\"ssh -l root\" ./dist/. root@192.168.3.4:agl-homescreen",
+    "sync": "rsync -avrzh --rsh=\"ssh -l root\" ./dist/. root@192.168.3.6:agl-homescreen",
+    "sync-local": "rsync -avrzh --rsh=\"ssh -p 4444 -l root\" ./dist/. root@localhost:agl-homescreen",    
     "deploy": "npm run build && npm run sync",
+    "deploy-local": "npm run build && npm run sync-local", 
+    "copy-app": "cp spotify dist/assets",
     "build": "ng build --prod --verbose",
     "start": "ng serve --prod --port=8000",
     "server": "node server/server.js",
     "ng": "ng",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve-app": "copy-app && ng build"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0-rc.1",

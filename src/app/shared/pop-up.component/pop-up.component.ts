@@ -17,7 +17,7 @@ export class PopUpComponent implements OnInit {
     @Output() onConfirm = new EventEmitter();
     @Output() onCancel = new EventEmitter();
 
-    private timeLeft: number = this.givenTime;
+    timeLeft: number = this.givenTime;
 
     constructor() {
     }

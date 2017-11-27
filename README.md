@@ -39,6 +39,81 @@ npm install
 
 ### Building the project in development mode
 
+### Flash a new image
+
+xzcat image.xz > image.bin
+sudo -s
+cat image.bin | dd of=/dev/disk2s1
+
+local:
+scp ./librespot_m3ulcb root@192.168.3.15:/usr/libexec/spotify/librespot
+
+m3:
+chmod +x /usr/bin/librespot_m3ulcb
+
+
+grep http-port /var/local/lib/systemd/*/*
+
+cd /usr/libexec/spotify/
+
+
+ps fax | grep spot
+kill ...
+systemctl --user restart afm-appli-poi@0.1.service
+
+
+chsmack -D /usr/libexec/spotify/credentials/NAME
+
+/usr/libexec/spotify/playspot
+======
+#/bin/bash
+
+card=hw:rsnddai0ak4613h
+base="/usr/libexec/spotify/"
+user="$1"
+cache="/home/root/.cache/librespot/${user}"
+cred="${cache}/credentials.json"
+
+if ! test -f "$cred"
+then
+	mkdir -p "${cache}"
+	cp "${base}/credentials/${user}" "${cred}"
+fi
+amixer -D${card} set 'DVC Out' 80%
+exec "${base}/librespot" --cache "${cache}" --name agl-car --backend alsa --device ${card}
+=====
+
+/etc/agl/identity-agent-config.json
+=====
+{
+ "endpoint": "https://agl-graphapi.forgerocklabs.org:443/getuserprofilefromtoken",
+ "vin": "WVGGF7BP7HD005986", /* edit to match your VIN code */
+ "autoadvise": true,
+ "delay": 5,
+ "idp": {
+     "authorization_endpoint": "",
+     "token_endpoint": "https://agl-am.forgerocklabs.org:8043/openam/oauth2/stateless/access_token"
+   }
+}
+=====
+
+API:
+identity/subscribe
+
+- The logout event:
+ { "eventName": "logout", "accountid": "null" }
+
+- The login event:
+ { "eventName": "login", "accountid": "NAME" }
+
+ [3]
+https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;f=test/AFB.js;hb=refs/heads/master
+[4]
+https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/app-framework-binder.git;f=test/AFB.html;hb=refs/heads/master
+
+{"username":"webmaxru","auth_type":1,"auth_data":"QVFDTGdkSDlzMFRtWEl3cVFjTTdEamlhaFFkWHJBR3BDMF81TzVKWk5NVGNRWHNGeFZDV2pJUzhOSjdCTnVzbElwSm9mc0RxYVNjTWc3ek80YWttSHlwWFhEYXktMUtMYVZRREM0cG80QWs="}
+
+
 ### Connect to the board
 ls -altr /dev
 screen /dev/tty.usbserial-AK04WW00 115200

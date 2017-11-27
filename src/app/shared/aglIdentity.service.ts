@@ -25,6 +25,7 @@ export class AglIdentityService {
     }
 
     public login(name, language){
+        console.log('login', name, language)
         this.webSocketService.sendMessage(
             JSON.stringify({
                 api: "agl-identity/login",
@@ -37,6 +38,7 @@ export class AglIdentityService {
     }
 
     public logout(){
+        console.log('logout')
         this.webSocketService.sendMessage(JSON.stringify({
             api: "agl-identity/logout",
             data: {

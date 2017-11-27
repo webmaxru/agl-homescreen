@@ -28,94 +28,57 @@ export class AppLauncherComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.afmMainService.runnablesResponse.subscribe((response: App[]) => {
-            this.apps = response;
-            this.apps.forEach((elem) => {
-                elem.extend = {
-                    isPressed: false,
-                };
 
-                // Set default icon when icon is not valid / doesn't exist
-                this.afmMainService.isIconValid(elem).subscribe(
-                    result => {
-                        if (!result)
-                            this.setDefaultIcon(elem);
-                    },
-                    error => {
-                        console.error('Error=', error);
-                        this.setDefaultIcon(elem)
-                    }
-                );
-            });
-        });
+        this.apps = [{
+            id: 'forgerock',
+            name: 'ForgeRock Identity',
+            shortname: 'ForgeRock',
+            version: '1',
+            author: 'ForgeRock',
+            description: 'ForgeRock',
+            iconUrl: '/assets/apps/forgerock.png',
+            extend: {
+                isPressed: false
+            },
+            isRunning: false
+        },{
+            id: 'lufthansa',
+            name: 'Lufthansa',
+            shortname: 'Lufthansa',
+            version: '1',
+            author: 'Lufthansa',
+            description: 'Lufthansa',
+            iconUrl: '/assets/apps/lufthansa.png',
+            extend: {
+                isPressed: false
+            },
+            isRunning: false
+        },{
+            id: 'paypal',
+            name: 'Paypal',
+            shortname: 'Paypal',
+            version: '1',
+            author: 'Paypal',
+            description: 'Paypal',
+            iconUrl: '/assets/apps/paypal.png',
+            extend: {
+                isPressed: false
+            },
+            isRunning: false
+        },{
+            id: 'spotify',
+            name: 'Spotify',
+            shortname: 'Spotify',
+            version: '1',
+            author: 'Spotify',
+            description: 'Spotify',
+            iconUrl: '/assets/apps/spotify.png',
+            extend: {
+                isPressed: false
+            },
+            isRunning: false
+        }]
 
-        this.afmMainService.startOnceResponse.subscribe((response: any) => {
-            alert('App is already running');
-        });
-
-        this.afmMainService.startAppResponse.subscribe(
-            (response: { apps: App[], app: App, res: Object }) => {
-                this.apps = response.apps;
-                if (response.app.runUri) {
-                    // Open app in a new tab
-                    let self = this;
-                    let app = response.app;
-                    if (environment.debug) {
-                        console.debug("Open apps: ", response.app.runUri);
-                    }
-                    let appTab = window.open(response.app.runUri, '_blank');
-                    // Let's some time to launch app on target
-                    setTimeout(() => {
-                        // Check if popup blocker is enabled by verifying the height of the new popup
-                        if (!appTab || appTab.outerHeight === 0) {
-                            alert("Please disable the popup blocker");
-                        } else {
-                            appTab.onbeforeunload = () => self.afmMainService.stopApp(app);
-                            appTab.onerror = (err) => console.error(err);
-                        }
-                    }, 3000);   // FIXME: removed hard-coded value
-                    if (appTab) {
-                        appTab.onerror = (err) => console.error(err);
-                    }
-                }
-            }
-        );
-
-        this.afmMainService.stopAppResponse.subscribe(
-            (response: { apps: App[], app: App, res: Object }) => this.apps = response.apps
-        );
-
-        this.aglIdentityService.loginResponse.subscribe((response: any) => {
-            if (this.account) {
-                this.tmpAccount = response.account;
-                this.hidePopUpLogin = false;
-            } else {
-                this.afmMainService.getRunnables();
-            }
-        });
-
-        this.aglIdentityService.logoutResponse.subscribe(data => {
-            this.account = null;
-        });
-
-        /* Request */
-        this.afmMainService.requestResponse.subscribe((response: any) => {
-            if (response.res.status == 'failed') {
-
-                // FIXME: start in remote mode is only supported for HTML apps
-                // Find a way to determine which kind of apps before starting
-                if (response.res.info == "can't start")
-                    response.res.info = "can't start this app in remote mode"
-
-                this.notifier = {
-                    show: true,
-                    title: 'ERROR',
-                    text: response.res.info + '!' || 'Unknown error !\n' + JSON.stringify(response),
-                }
-            }
-        });
-
-        this.afmMainService.getRunnables();
     }
 
     ngOnDestroy(): void {
@@ -124,10 +87,12 @@ export class AppLauncherComponent implements OnInit, OnDestroy {
     }
 
     runApp(event, app) {
-        if (app.isRunning)
+
+
+/*         if (app.isRunning)
             this.afmMainService.stopApp(app);
         else
-            this.afmMainService.startApp(app, "remote");
+            this.afmMainService.startApp(app, "remote"); */
     }
 
     confirmPopup() {

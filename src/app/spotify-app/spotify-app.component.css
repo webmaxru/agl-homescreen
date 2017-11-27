@@ -1,0 +1,9 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
+      /* crapy hack to have full-screen !!! */
+      width: 1080px;
+      margin-left: -190px;
+  }

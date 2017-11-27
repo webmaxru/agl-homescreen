@@ -3,6 +3,6 @@
     flex-direction: column;
     height: 100%;
     /* crapy hack to have full-screen !!! */
-    width: 1096px;
-    margin-left: -200px;
+    width: 1080px;
+    margin-left: -190px;
 }

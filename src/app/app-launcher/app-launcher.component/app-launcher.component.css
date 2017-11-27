@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+    /* crapy hack to have full-screen !!! */
+    width: 1080px;
+    margin-left: -190px;
 }
 
 .welcome-bar {
@@ -20,6 +24,11 @@
   font-size: 0.5em;
   text-transform: uppercase;
   color: #FFFFFF;
+}
+
+.columns {
+  flex: 0 1 33%;
+  height: 200px;
 }
 
 .app-launcher.is-running::before {

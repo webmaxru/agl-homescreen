@@ -12,6 +12,8 @@ import {SettingsBluetoothComponent} from "./settings/settings-bluetooth/settings
 import {SettingsWifiComponent} from "./settings/settings-wifi/settings-wifi.component";
 import {SettingsDatetimeComponent} from "./settings/settings-datetime/settings-datetime.component";
 import {EventEmitterComponent} from "./event-emitter/event-emitter.component/event-emitter.component";
+import {SpotifyAppComponent} from "./spotify-app/spotify-app.component";
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -31,6 +33,11 @@ const routes: Routes = [
     ]
   },
   {path: 'event-emitter', component: EventEmitterComponent},
+  {
+    path: 'login',
+    loadChildren: 'app/login/login.module#LoginModule'
+  },
+  {path: 'spotify', component: SpotifyAppComponent},
   {path: '**', component: HomeComponent}
 
 ];
